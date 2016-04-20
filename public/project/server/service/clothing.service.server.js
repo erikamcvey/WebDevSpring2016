@@ -1,7 +1,7 @@
 var multer = require('multer');
 module.exports = function(app, ClothingModel) {
 
-    app.post('/api/project/clothing', multer({ dest: __dirname + '/../../uploads/images/'}).single('upl'), addClothing);
+    app.post('/api/project/clothing', multer({ dest: '/Users/mcvey/webdevelopment/public/project/images/'}).single('upl'), addClothing);
     app.post('/api/project/markdirty', markDirty);
     app.post('/api/project/markclean', markClean);
     app.put('/api/project/clothing/:id', updateClothing);
@@ -11,12 +11,8 @@ module.exports = function(app, ClothingModel) {
     app.get('/api/project/search/clothing/:query', searchClothing);
 
     function addClothing(req, res) {
-        console.log(__dirname + '/project/images/');
-        console.log(__dirname + '/../project/images/');
-        console.log(__dirname + './../project/images/');
-
        var path = __dirname + req.file.path;
-        ClothingModel.addClothing(req.body, req.file.path, req.user._id);
+        ClothingModel.addClothing(req.body, req.file.filename, req.user._id);
         res.status(204).end();
     }
 

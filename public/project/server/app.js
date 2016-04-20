@@ -5,8 +5,8 @@ module.exports = function(app, db, mongoose, passport) {
     var clothingModel = require("./models/clothing/clothing.model.server.js")(db, mongoose);
     var advertisementModel = require("./models/advertisement/advertisement.model.server.js")(db, mongoose);
 
-    require("./services/user.service.server.js")(app, userModel, passport);
-    require("./services/clothing.service.server.js")(app, clothingModel);
-    require("./services/advertisement.service.server.js")(app, advertisementModel);
+    require("./service/user.service.server.js")(app, userModel, passport);
+    require("./service/clothing.service.server.js")(app, clothingModel);
+    require("./service/advertisement.service.server.js")(app, advertisementModel);
 
 };

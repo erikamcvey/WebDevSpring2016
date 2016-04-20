@@ -19,7 +19,7 @@ module.exports = function(db, mongoose) {
 
     function addClothing(item, filepath, user) {
         var deferred = q.defer();
-        item.img = filepath;
+        item.img = '/project/images/' + filepath;
         item.user_id = user;
         item.clean = true;
         ClothingModel.create(item, function (error, doc) {

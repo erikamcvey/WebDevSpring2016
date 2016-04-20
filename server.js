@@ -7,7 +7,6 @@ var cookieParser  = require('cookie-parser');
 var passport = require('passport');
 var mongoose = require('mongoose');
 var connectionString = 'mongodb://127.0.0.1:27017/webdevelopment';
-console.log(__dirname);
 //connectionString = process.env.OPENSHIFT_MONGODB_DB_URL + process.env.OPENSHIFT_APP_NAME;
 
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {

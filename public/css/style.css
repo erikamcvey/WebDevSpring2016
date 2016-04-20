@@ -8,7 +8,7 @@ html body {
 }
 html body .content {
     text-align: center;
-    width: 600px;
+    width: 480px;
     margin: 0 auto;
 }
 html body .content h1 {
@@ -39,4 +39,11 @@ html body .content .circle:hover {
 }
 html body .content a {
     text-decoration: none;
+}
+
+#me {
+    max-width: 100%;
+    border-radius: 50%;
+    position: relative;
+    top: 10%;
 }
